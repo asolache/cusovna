@@ -36,10 +36,26 @@
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="module-1.html" class="bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition">▶ Empieza el curso gratis</a>
-        <a href="#consultoria" class="bg-secondary text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition">💼 Solicita consultoría</a>
+        <a id="consultoria-link" href="#" class="bg-secondary text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition">💼 Solicita consultoría</a>
       </div>
     </div>
   </header>
+
+  <!-- Script para proteger el email -->
+  <script>
+    // Codificación simple para evitar scrapers
+    (function() {
+      const email = ['a', 's', 'o', 'l', 'a', 'c', 'h', 'e', '@', 'm', 'a', 'c', '.', 'c', 'o', 'm'].join('');
+      const mailto = 'mailto:' + email;
+      
+      // Actualizar enlaces de contacto
+      const links = document.querySelectorAll('#consultoria-link, .contact-link');
+      links.forEach(link => {
+        link.href = mailto;
+        link.textContent = link.textContent.replace('tudireccion@valuenetworklab.com', email);
+      });
+    })();
+  </script>
 
   <!-- Pérdida real -->
   <section class="max-w-4xl mx-auto px-4 py-16">
@@ -99,7 +115,7 @@
           <li>✅ ROI estimado en términos de EBITDA, tiempo y experiencia</li>
         </ul>
         <p class="text-center font-semibold">
-          <a href="mailto:tudireccion@valuenetworklab.com?subject=Consulta%20VNA%20para%20mi%20empresa" class="text-secondary hover:underline">📧 Escríbenos para una sesión exploratoria sin compromiso</a>
+          <a id="contact-link" href="#" class="contact-link text-secondary hover:underline">📧 Escríbenos para una sesión exploratoria sin compromiso</a>
         </p>
       </div>
     </section>
@@ -134,7 +150,7 @@
       <p class="mb-6">Empieza el curso o agenda una consulta estratégica para tu empresa.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="module-1.html" class="bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition">🎓 Accede al curso</a>
-        <a href="mailto:tudireccion@valuenetworklab.com?subject=Consulta%20VNA%20para%20mi%20empresa" class="bg-secondary text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition">📞 Consultoría B2B</a>
+        <a id="consultoria-link-2" href="#" class="contact-link bg-secondary text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition">📞 Consultoría B2B</a>
       </div>
     </div>
   </section>
